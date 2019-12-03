@@ -8,6 +8,7 @@ module "aws_vpc" {
   vpc_cidr_block                = "${var.vpc_cidr_block}"
   vpc_public_subnet_cidr_block  = "${var.vpc_public_subnet_cidr_block}"
   vpc_private_subnet_cidr_block = "${var.vpc_private_subnet_cidr_block}"
+  tags                          = "${var.tags}"
 }
 
 module "aws_route53_public" {
