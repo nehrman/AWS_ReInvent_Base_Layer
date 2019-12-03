@@ -1,3 +1,5 @@
+####### variables for VPC #######
+
 variable "name" {
   description = "Name to be used on all the resources as identifier"
   type        = "string"
@@ -62,19 +64,7 @@ variable "vpc_private_subnet_cidr_block" {
   default     = []
 }
 
-### TAGS VARIABLES
-
-variable "tags" {
-  description = "Default tags used by any resources"
-  type        = "map"
-
-  default = {
-    "Name"        = "RHForum2019"
-    "owner"       = "nehrman"
-    "purpose"     = "demo"
-    "environment" = "production"
-  }
-}
+### VPC SPECIFIC TAGS VARIABLES ###
 
 variable "vpc_tags" {
   description = "Additional Tags for VPC"
@@ -118,7 +108,7 @@ variable "internet_gateway_tags" {
   default     = {}
 }
 
-####### variables.tf #######
+####### variables for ROUTE 53 #######
 
 variable "public_zone_name" {
   description = "Domain or Subdomain name for which to create public zone"
@@ -150,8 +140,28 @@ variable "vpc_id" {
   default     = ""
 }
 
-variable "comment" {
+variable "comment_public" {
   description = "The Zone Comment that should be added to all managed zones"
   type        = "list"
   default     = []
+}
+
+variable "comment_private" {
+  description = "The Zone Comment that should be added to all managed zones"
+  type        = "list"
+  default     = []
+}
+
+### GLOBAL TAGS VARIABLES ###
+
+variable "tags" {
+  description = "Default tags used by any resources"
+  type        = "map"
+
+  default = {
+    "Name"        = "RHForum2019"
+    "owner"       = "nehrman"
+    "purpose"     = "demo"
+    "environment" = "production"
+  }
 }
