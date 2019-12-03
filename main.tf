@@ -13,12 +13,12 @@ module "aws_vpc" {
 module "aws_route53_public" {
   source           = "app.terraform.io/re-invent/route53/aws"
   public_zone_name = "${var.public_zone_name}"
-  comment          = "${var.comment}"
+  comment          = "${var.comment_public}"
 }
 
 module "aws_route53_private" {
   source            = "app.terraform.io/re-invent/route53/aws"
   private_zone_name = "${var.private_zone_name}"
   vpc_id            =  "${module.aws_vpc.vpc_id}"
-  comment           = "${var.comment}"
+  comment           = "${var.comment_private}"
 }
