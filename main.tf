@@ -1,5 +1,5 @@
 module "aws_vpc" {
-  source                        = "app.terraform.io/Hashicorp-neh-Demo/vpc/aws"
+  source                        = "app.terraform.io/re-invent/vpc/aws"
   name                          = "${var.name}"
   azs                           = "${var.azs}"
   internet_gateway              = "${var.internet_gateway}"
