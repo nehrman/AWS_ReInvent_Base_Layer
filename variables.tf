@@ -159,7 +159,7 @@ variable "tags" {
   type        = "map"
 
   default = {
-    "Name"        = "RHForum2019"
+    "Name"        = "AWSReInvent19"
     "owner"       = "nehrman"
     "purpose"     = "demo"
     "environment" = "production"
